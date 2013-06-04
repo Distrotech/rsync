@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Rsync by Distrotech</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Rsync</h1>
+          <h2>Mirror of clone git://git.samba.org/rsync.git</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/Distrotech/rsync/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/Distrotech/rsync/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/Distrotech/rsync" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h2>
+<a name="what-is-rsync" class="anchor" href="#what-is-rsync"><span class="octicon octicon-link"></span></a>WHAT IS RSYNC?</h2>
+
+<p>Rsync is a fast and extraordinarily versatile file copying tool for
+both remote and local files.</p>
+
+<p>Rsync uses a delta-transfer algorithm which provides a very fast method
+for bringing remote files into sync.  It does this by sending just the
+differences in the files across the link, without requiring that both
+sets of files are present at one of the ends of the link beforehand.  At
+first glance this may seem impossible because the calculation of diffs
+between two files normally requires local access to both files.</p>
+
+<p>A technical report describing the rsync algorithm is included with this
+package.</p>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>USAGE</h2>
+
+<p>Basically you use rsync just like scp, but rsync has many additional
+options.  To get a complete list of supported options type:</p>
+
+<pre><code>rsync --help
+</code></pre>
+
+<p>See the manpage for more detailed information.</p>
+
+<h2>
+<a name="setup" class="anchor" href="#setup"><span class="octicon octicon-link"></span></a>SETUP</h2>
+
+<p>Rsync normally uses ssh or rsh for communication with remote systems.
+It does not need to be setuid and requires no special privileges for
+installation.  You must, however, have a working ssh or rsh system.
+Using ssh is recommended for its security features.</p>
+
+<p>Alternatively, rsync can run in `daemon' mode, listening on a socket.
+This is generally used for public file distribution, although
+authentication and access control are available.</p>
+
+<p>To install rsync, first run the "configure" script.  This will create a
+Makefile and config.h appropriate for your system.  Then type "make".</p>
+
+<p>Note that on some systems you will have to force configure not to use
+gcc because gcc may not support some features (such as 64 bit file
+offsets) that your system may support.  Set the environment variable CC
+to the name of your native compiler before running configure in this
+case.</p>
+
+<p>Once built put a copy of rsync in your search path on the local and
+remote systems (or use "make install").  That's it!</p>
+
+<h2>
+<a name="rsync-daemons" class="anchor" href="#rsync-daemons"><span class="octicon octicon-link"></span></a>RSYNC DAEMONS</h2>
+
+<p>Rsync can also talk to "rsync daemons" which can provide anonymous or
+authenticated rsync.  See the rsyncd.conf(5) man page for details on how
+to setup an rsync daemon.  See the rsync(1) man page for info on how to
+connect to an rsync daemon.</p>
+
+<h2>
+<a name="web-site" class="anchor" href="#web-site"><span class="octicon octicon-link"></span></a>WEB SITE</h2>
+
+<p>The main rsync web site is here:</p>
+
+<pre><code>http://rsync.samba.org/
+</code></pre>
+
+<p>You'll find a FAQ list, downloads, resources, HTML versions of the
+manpages, etc.</p>
+
+<h2>
+<a name="mailing-lists" class="anchor" href="#mailing-lists"><span class="octicon octicon-link"></span></a>MAILING LISTS</h2>
+
+<p>There is a mailing list for the discussion of rsync and its applications
+that is open to anyone to join.  New releases are announced on this
+list, and there is also an announcement-only mailing list for those that
+want official announcements.  See the mailing-list page for full
+details:</p>
+
+<pre><code>http://rsync.samba.org/lists.html
+</code></pre>
+
+<h2>
+<a name="bug-reports" class="anchor" href="#bug-reports"><span class="octicon octicon-link"></span></a>BUG REPORTS</h2>
+
+<p>To visit this web page for full the details on bug reporting:</p>
+
+<pre><code>http://rsync.samba.org/bugzilla.html
+</code></pre>
+
+<p>That page contains links to the current bug list, and information on how
+to report a bug well.  You might also like to try searching the Internet
+for the error message you've received, or looking in the mailing list
+archives at:</p>
+
+<pre><code>http://mail-archive.com/rsync@lists.samba.org/
+</code></pre>
+
+<p>To send a bug report, follow the instructions on the bug-tracking
+page of the web site.</p>
+
+<p>Alternately, email your bug report to <a href="mailto:rsync@lists.samba.org">rsync@lists.samba.org</a> .</p>
+
+<h2>
+<a name="git-repository" class="anchor" href="#git-repository"><span class="octicon octicon-link"></span></a>GIT REPOSITORY</h2>
+
+<p>If you want to get the very latest version of rsync direct from the
+source code repository then you can use git:</p>
+
+<pre><code>git clone git://git.samba.org/rsync.git
+</code></pre>
+
+<p>See the download page for full details on all the ways to grab the
+source, including nightly tar files, web-browsing of the git repository,
+etc.:</p>
+
+<pre><code>http://rsync.samba.org/download.html
+</code></pre>
+
+<h2>
+<a name="copyright" class="anchor" href="#copyright"><span class="octicon octicon-link"></span></a>COPYRIGHT</h2>
+
+<p>Rsync was originally written by Andrew Tridgell and is currently
+maintained by Wayne Davison.   It has been improved by many developers
+from around the world.</p>
+
+<p>Rsync may be used, modified and redistributed only under the terms of
+the GNU General Public License, found in the file COPYING in this
+distribution, or at:</p>
+
+<pre><code>http://www.fsf.org/licenses/gpl.html
+</code></pre>
+
+<h2>
+<a name="availability" class="anchor" href="#availability"><span class="octicon octicon-link"></span></a>AVAILABILITY</h2>
+
+<p>The main web site for rsync is <a href="http://rsync.samba.org/">http://rsync.samba.org/</a>
+The main ftp site is <a>ftp://rsync.samba.org/pub/rsync/</a>
+This is also available as rsync://rsync.samba.org/rsyncftp/</p>
+        </section>
+
+        <footer>
+          Rsync is maintained by <a href="https://github.com/Distrotech">Distrotech</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
